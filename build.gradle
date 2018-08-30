@@ -65,3 +65,7 @@ allprojects {
 task wrapper(type: Wrapper) {
     gradleVersion = '3.4'
 }
+
+dependencies {
+    compile 'org.json:json:20160212'
+}
