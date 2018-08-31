@@ -17,13 +17,18 @@ public class HelloAction extends AnAction {
     public void actionPerformed(AnActionEvent event) {
         Project project = event.getProject();
         try {
-            String temperature = Integer.toString(WeatherReader.checkTemperature(temperatureScale));
+            WeatherReader weatherReader = new WeatherReader();
+            Weather weather = weatherReader.getWeather(temperatureScale);
+
+            String temperature = Integer.toString(weather.getTemperature().getAmount());
+            String textWeather = weather.getTextWeather();
             Messages.showMessageDialog(project,
-                    "The temperature in Poznań is " + temperature + "degrees " + temperatureScale.toString().toLowerCase(),
+                    "The amount in Poznań is " + temperature + " degrees " + temperatureScale.toString().toLowerCase() +
+                    "\r\n Today is " + textWeather,
                     "Greeting",
                     Messages.getInformationIcon());
         } catch (IOException e) {
-            Messages.showMessageDialog(project, "Cannot download temperature", "Error", Messages.getErrorIcon());
+            Messages.showMessageDialog(project, "Cannot download amount", "Error", Messages.getErrorIcon());
         }
     }
 }

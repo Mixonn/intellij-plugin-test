@@ -1,4 +1,4 @@
-package com.test;
+package com.test.util.json;
 
 import org.json.JSONException;
 import org.json.JSONObject;

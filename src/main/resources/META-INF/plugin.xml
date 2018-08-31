@@ -22,12 +22,13 @@
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="My Sample Tool Window" icon="/dsBuffer.png" anchor="right" factoryClass="com.test.toolwindow.WindowTool"/>
   </extensions>
 
   <actions>
-    <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
+    <group id="MyPlugin.SampleMenu" text="Weather" description="Check the weather!">
       <add-to-group group-id="MainMenu" anchor="last"/>
-      <action id="Myplugin.Textboxes" class="com.test.HelloAction" text="Hello" description="Says hello"/>
+      <action id="Myplugin.Textboxes" class="com.test.HelloAction" text="Poznan" description="The weather in Poznan"/>
     </group>
   </actions>
 

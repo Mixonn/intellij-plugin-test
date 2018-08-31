@@ -1,5 +1,7 @@
 plugins {
     id "org.jetbrains.intellij" version "0.2.15"
+    id 'io.franzbecker.gradle-lombok' version '1.8'
+    id 'java'
 }
 
 repositories {
@@ -69,4 +71,5 @@ task wrapper(type: Wrapper) {
 
 dependencies {
     compile 'org.json:json:20160212'
+    compileOnly('org.projectlombok:lombok:1.16.20')
 }
